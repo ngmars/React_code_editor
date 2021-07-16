@@ -3,7 +3,7 @@ import actions from "./actions";
 
 export function* addCode(){
     yield takeEvery("ADD_CODE_REQUEST",function*({payload}:any){
-        console.log('This is my payload: ',payload)
+        //console.log('This is my payload: ',payload)
         if(payload.syntaxType=='html'){
             yield put({
                 type: actions.ADD_HTML_SUCCESS,

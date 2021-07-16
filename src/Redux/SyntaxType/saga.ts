@@ -3,7 +3,7 @@ import actions from "./actions";
 
 export function* changeSyntax(){
     yield takeEvery("CHANGE_SYNTAX_REQUEST",function*({payload}:any){
-        console.log('This is my payload: ',payload)
+        //console.log('This is my payload: ',payload)
         yield put({
             type: actions.CHANGE_SYNTAX_SUCCESS,
             syntaxType: payload.syntaxType

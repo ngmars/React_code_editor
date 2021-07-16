@@ -14,7 +14,7 @@ export default function addCode(state=initState, action:any){
                 ...state
             };
         case actions.ADD_HTML_SUCCESS:
-            console.log('This is action html: ',action)
+            //console.log('This is action html: ',action)
                 return{
                     ...state,
                     loading:false,
@@ -30,7 +30,7 @@ export default function addCode(state=initState, action:any){
                 };
             
         case actions.ADD_JS_SUCCESS:
-                console.log('This is action: js',action)
+                //console.log('This is action: js',action)
                 return{
                     ...state,
                     loading:false,

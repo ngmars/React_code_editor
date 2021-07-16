@@ -15,22 +15,22 @@ export default function Sidebar(){
     const [collapsable, setCollapsable] = useState(true)
 
     const onCollapse = (collapsed:any) => {
-        console.log(collapsed);
+        //console.log(collapsed);
         setCollapsable(collapsed);
       };
     
     const syntaxChangeHandler = (event:any)=>{
-        console.log(event);
+        //console.log(event);
         if(event==1){
-            console.log('Index.html');
+            //console.log('Index.html');
             dispatch(changeSyntax('html'))
         }
         else if(event==2){
-            console.log('Index.css');
+            //console.log('Index.css');
             dispatch(changeSyntax('css'))
         }
         else if(event==3){
-            console.log('Index.js');
+            //console.log('Index.js');
             dispatch(changeSyntax('js'))
         }
         else{

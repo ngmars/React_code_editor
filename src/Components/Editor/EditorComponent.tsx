@@ -13,12 +13,12 @@ import addCodeAction from '../../Redux/Codebase/actions';
 const {changeSyntax} = addCodeAction
 export default function Editor (props:any) {
     const dispatch = useDispatch();
-    console.log(props);
+    //console.log(props);
     const [html,setHtml] = useState('')
     const[css,setCss] = useState('')
     const[js,setJs] = useState('')
     const syntax= useSelector((state:any)=>state?.changeSyntax?.syntaxType)
-    console.log("editorSyntax: ",syntax)
+    //console.log("editorSyntax: ",syntax)
     
     const codeMirrorOptions = {
         theme: 'material',
@@ -40,7 +40,7 @@ export default function Editor (props:any) {
                 onBeforeChange={(editor, data, html) => {
                     setHtml(html);
                     dispatch(changeSyntax('html',html))
-                    console.log('THIS IS HTML')
+                    //console.log('THIS IS HTML')
                 }}
             />
             </div>
@@ -58,7 +58,7 @@ export default function Editor (props:any) {
                     onBeforeChange={(editor, data, css) => {
                         setCss(css);
                         dispatch(changeSyntax('css',css))
-                        console.log('THIS IS CSS')
+                        //console.log('THIS IS CSS')
                     }}
                 />
           </div>
@@ -77,7 +77,7 @@ export default function Editor (props:any) {
                     onBeforeChange={(editor, data, js) => {
                         setJs(js);
                         dispatch(changeSyntax('js',js))
-                        console.log('THIS IS JS')
+                        //console.log('THIS IS JS')
                     }}
                 />
             </div>
