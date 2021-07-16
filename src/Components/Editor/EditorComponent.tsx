@@ -1,6 +1,6 @@
 import React, { useState,useEffect, useRef } from 'react';
 import { Controlled as CodeMirror } from 'react-codemirror2';
-import './editor.css';
+import './Editor.css';
 import 'codemirror/lib/codemirror.css';
 import 'codemirror/theme/material.css';
 
