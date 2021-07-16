@@ -50,6 +50,7 @@ export default function Editor (props:any) {
                     mode: 'htmlmixed',
                     ...codeMirrorOptions,
                 }}
+                
                 onBeforeChange={(editor, data, html) => {
                     setHtml(html);
                     dispatch(changeSyntax('html',html))

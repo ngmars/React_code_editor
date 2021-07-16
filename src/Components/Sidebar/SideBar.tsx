@@ -9,6 +9,9 @@ import {
     FileOutlined,
   } from '@ant-design/icons';
 import { LoadingOutlined } from '@ant-design/icons';
+import html from '../../assets/html.svg';
+import css from '../../assets/css3.svg';
+import js from '../../assets/js.svg';
 const {changeSyntax} = changeSyntaxAction
 const {shareLink} = genShareableLinkAction
 const { Sider } = Layout;
@@ -59,25 +62,25 @@ export default function Sidebar(){
 
     let DispLink;
     if(linkLoading==false){
-        DispLink=(<a href={window.location.href+link}><div>{window.location.href+link}</div></a>)
+        DispLink=(<a href={window.location.href.substring(0,21)+link}><div>{window.location.href+link}</div></a>)
     }else{
         DispLink=(<LoadingOutlined style={{ fontSize: 24 }} spin />)
     }
     
 return (
 
-        <Sider collapsible collapsed={collapsable} onCollapse={onCollapse}>
+        <Sider collapsed={true} >
                 <div className="logo" />
                 <Menu onClick={(e) =>syntaxChangeHandler(e.key)} theme="dark" defaultSelectedKeys={['1']} mode="inline">
                 <Menu.Item key="4" >
                     </Menu.Item>
-                    <Menu.Item key="1" icon={<PieChartOutlined />}>
+                    <Menu.Item key="1" icon={<img src={html} style={{color:"gray"}}/>}>
                         Index.html
                     </Menu.Item>
-                    <Menu.Item key="2" icon={<DesktopOutlined />}>
+                    <Menu.Item key="2" icon={<img src={css} style={{color:"gray"}}/>}>
                         Index.css
                     </Menu.Item>
-                    <Menu.Item key="3" icon={<FileOutlined />}>
+                    <Menu.Item key="3" icon={<img src={js} style={{color:"gray"}}/>}>
                         Index.js
                     </Menu.Item>
                 </Menu>
@@ -89,7 +92,7 @@ return (
                     onVisibleChange={PopOverToggle}
                     content={<>{DispLink}<br/><a onClick={closePopOver}>Copy</a></>} 
                 >
-                <Button onClick={clickHandler} style={{marginTop:"70vh",marginLeft:"5%"}}>Share</Button>
+                <Button type="primary" onClick={clickHandler} style={{marginTop:"5vh",marginLeft:"5%"}}>Share</Button>
                 </Popover>
         </Sider> 
         )

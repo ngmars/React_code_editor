@@ -11,18 +11,16 @@
       left: 0; */
       background-color: #1E1E2C;
       display: grid;
-
+      height: 100vh;
     }
     
     .code-editor {
       height: 100vh;
       overflow: hidden;
-      position: relative;
+
     }
   
-    .half-height {
-      height: 100vh;
-    }
+
     
     .editor-header {
       height: 30px;
@@ -42,11 +40,6 @@
         height: 100vh;
     }
     .result {
-      /* position: fixed; */
-      /* top: 0; */
-      /* right: 0;
-      bottom: 0; */
-      /* left: 600px; */
       overflow: hidden;
     }
     
@@ -54,3 +47,15 @@
       width: 100%;
       height: 100vh;
     }
+    .CodeMirror .cm-s-material .CodeMirror-wrap .CodeMirror-scroll{
+        height:100vh
+    }
+    .CodeMirror {
+        height: 100vh;
+        min-height: 100vh;
+      }
+      
+      .container {
+        height: 100vh;
+        width: 100%;
+      }
