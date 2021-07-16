@@ -18,6 +18,7 @@ const { Sider } = Layout;
 
 export default function Sidebar(){
     const dispatch = useDispatch();
+    console.log('checking: ',window.location.href.substring(0,21));
     const htmlCode= useSelector((state:any)=>state?.addCode?.htmlCode);
     const cssCode= useSelector((state:any)=>state?.addCode?.cssCode);
     const jsCode= useSelector((state:any)=>state?.addCode?.jsCode);
@@ -62,7 +63,7 @@ export default function Sidebar(){
 
     let DispLink;
     if(linkLoading==false){
-        DispLink=(<a href={window.location.href.substring(0,21)+link}><div>{window.location.href+link}</div></a>)
+        DispLink=(<a href={window.location.href.substring(0,22)+link}><div>{window.location.href.substring(0,22)+link}</div></a>)
     }else{
         DispLink=(<LoadingOutlined style={{ fontSize: 24 }} spin />)
     }

@@ -1,12 +1,13 @@
 import {call, all, takeEvery, put, fork } from "redux-saga/effects";
 import actions from "./actions";
 import axios from "axios";
-var request = require('request');
+import workerUrl from '../../config/workerUrl';
+
 
 export function ApiGenLink(payload){
     let codeSend = JSON.stringify(payload.code)
     var formdata = new FormData();
-    formdata.set("api_dev_key", 'DvgNI5Zm1V4cit5US92pJGe3tfDmy5MB');
+    formdata.set("api_dev_key", workerUrl.devToken);
     formdata.set("api_paste_code", codeSend);
     formdata.set("api_paste_private", "0");
     formdata.set("api_paste_name", "test.json");
@@ -14,10 +15,10 @@ export function ApiGenLink(payload){
     formdata.set("api_paste_format", "json");
     formdata.set("api_option", "paste");
   
-    let url= 'https://cors-anywhere.herokuapp.com/https://pastebin.com/api/api_post.php'
+   
     var config = {
         method: 'post',
-        url: 'https://weathered-bonus-16c8.majorshah19.workers.dev/?https://pastebin.com/api/api_post.php',
+        url: workerUrl.url+'?https://pastebin.com/api/api_post.php',
         headers: { 
           'Origin': 'Access-Control-Allow-Origin', 
         },

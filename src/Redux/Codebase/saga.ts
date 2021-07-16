@@ -1,8 +1,9 @@
 import { call, all, takeEvery, put, fork } from "redux-saga/effects";
 import actions from "./actions";
 import axios from "axios";
+import workerUrl from '../../config/workerUrl';
 function ApiGetCode(payload:any){
-    let url='https://weathered-bonus-16c8.majorshah19.workers.dev/?https://pastebin.com/raw/'+payload.link;
+    let url=workerUrl.url+'?https://pastebin.com/raw/'+payload.link;
     return axios.get(url).then(res=>{
         return{
             data:res.data
