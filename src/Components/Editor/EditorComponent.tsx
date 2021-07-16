@@ -12,14 +12,27 @@ import IframeComponent from '../iFrame/iFrame';
 import addCodeAction from '../../Redux/Codebase/actions';
 const {changeSyntax} = addCodeAction
 export default function Editor (props:any) {
+    console.log(props)
     const dispatch = useDispatch();
     //console.log(props);
     const [html,setHtml] = useState('')
     const[css,setCss] = useState('')
     const[js,setJs] = useState('')
     const syntax= useSelector((state:any)=>state?.changeSyntax?.syntaxType)
-    //console.log("editorSyntax: ",syntax)
-    
+    const gotHtmlCode= useSelector((state:any)=>state?.addCode?.gotHtmlCode);
+    const gotCssCode= useSelector((state:any)=>state?.addCode?.gotCssCode);
+    const gotJsCode= useSelector((state:any)=>state?.addCode?.gotJsCode);
+    useEffect(()=>{
+        if(gotHtmlCode!=null){
+            setHtml(gotHtmlCode)
+        }
+        if(gotCssCode!=null){
+            setCss(gotCssCode)
+        }
+        if(gotJsCode!=null){
+            setJs(gotJsCode)
+        }
+    },[gotHtmlCode,gotCssCode,gotJsCode])
     const codeMirrorOptions = {
         theme: 'material',
         lineNumbers: true,

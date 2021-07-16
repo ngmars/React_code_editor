@@ -1,9 +1,13 @@
 import actions from './actions';
 const initState= {
     loading: null,
+    codeLoad:null,
     htmlCode: null,
     cssCode:null,
-    jsCode:null
+    jsCode:null,
+    gotHtmlCode: null,
+    gotCssCode:null,
+    gotJsCode:null
 }
 
 export default function addCode(state=initState, action:any){
@@ -36,6 +40,20 @@ export default function addCode(state=initState, action:any){
                     loading:false,
                     jsCode:action.jsCode
                 };
+        case action.GET_CODE_REQUEST:
+            return{
+                ...state,
+                codeLoad:true,
+            }
+        case actions.GET_CODE_SUCCESS:
+            //console.log('This is action: js',action)
+            return{
+                ...state,
+                codeLoad:false,
+                gotJsCode:action.jsCode,
+                gotHtmlCode:action.htmlCode,
+                gotCssCode:action.cssCode
+            };
         
         default:
             return state

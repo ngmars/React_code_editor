@@ -1,24 +1,35 @@
 import React,{useState} from 'react';
-import {Layout, Menu } from 'antd';
-import {useDispatch } from 'react-redux';
+import {Layout, Menu,Popover, Button,Spin  } from 'antd';
+import {useSelector, useDispatch } from 'react-redux';
 import changeSyntaxAction from '../../Redux/SyntaxType/actions';
+import genShareableLinkAction from '../../Redux/Shareable/actions';
 import {
     DesktopOutlined,
     PieChartOutlined,
     FileOutlined,
   } from '@ant-design/icons';
+import { LoadingOutlined } from '@ant-design/icons';
 const {changeSyntax} = changeSyntaxAction
+const {shareLink} = genShareableLinkAction
 const { Sider } = Layout;
+
 export default function Sidebar(){
     const dispatch = useDispatch();
-
-    const [collapsable, setCollapsable] = useState(true)
+    const htmlCode= useSelector((state:any)=>state?.addCode?.htmlCode);
+    const cssCode= useSelector((state:any)=>state?.addCode?.cssCode);
+    const jsCode= useSelector((state:any)=>state?.addCode?.jsCode);
+    const [collapsable, setCollapsable] = useState(true);
+    const [visible,setVisible] = useState(false);
+    const link=useSelector((state:any)=>state?.shareableLink?.successLink)
+    const linkLoading=useSelector((state:any)=>state?.shareableLink?.loading)
 
     const onCollapse = (collapsed:any) => {
         //console.log(collapsed);
         setCollapsable(collapsed);
       };
-    
+    const clickHandler=()=>{
+        dispatch(shareLink({htmlCode,cssCode,jsCode}))
+    }
     const syntaxChangeHandler = (event:any)=>{
         //console.log(event);
         if(event==1){
@@ -37,6 +48,22 @@ export default function Sidebar(){
             console.log('NOT A VALID CLICK');
         }
     }
+
+    const closePopOver= ()=>{
+        navigator.clipboard.writeText('heh')
+        setVisible(false)
+    }
+    const PopOverToggle= ()=>{
+        setVisible(!visible)
+    }
+
+    let DispLink;
+    if(linkLoading==false){
+        DispLink=(<a href={window.location.href+link}><div>{window.location.href+link}</div></a>)
+    }else{
+        DispLink=(<LoadingOutlined style={{ fontSize: 24 }} spin />)
+    }
+    
 return (
 
         <Sider collapsible collapsed={collapsable} onCollapse={onCollapse}>
@@ -54,6 +81,16 @@ return (
                         Index.js
                     </Menu.Item>
                 </Menu>
+                <Popover 
+                    placement="right" 
+                    title={'Your Shareable link!'} 
+                    trigger="click"
+                    visible={visible}
+                    onVisibleChange={PopOverToggle}
+                    content={<>{DispLink}<br/><a onClick={closePopOver}>Copy</a></>} 
+                >
+                <Button onClick={clickHandler} style={{marginTop:"70vh",marginLeft:"5%"}}>Share</Button>
+                </Popover>
         </Sider> 
         )
 }

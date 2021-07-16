@@ -1,5 +1,41 @@
-import { all, takeEvery, put, fork } from "redux-saga/effects";
+import { call, all, takeEvery, put, fork } from "redux-saga/effects";
 import actions from "./actions";
+import axios from "axios";
+function ApiGetCode(payload:any){
+    let url='https://weathered-bonus-16c8.majorshah19.workers.dev/?https://pastebin.com/raw/'+payload.link;
+    return axios.get(url).then(res=>{
+        return{
+            data:res.data
+        }
+    })
+    .catch(err=>{
+        return{
+            errorMessage:err
+        }
+    })
+}
+
+export function* getCode(){
+    yield takeEvery("GET_CODE_REQUEST",function*({payload}:any){
+        console.log('This is my payload: ',payload)
+        
+        const {data,errorMessage} =yield call(ApiGetCode,payload) 
+        if(!errorMessage){
+            yield put({
+                type: actions.GET_CODE_SUCCESS,
+                htmlCode: data.htmlCode,
+                cssCode: data.cssCode,
+                jsCode: data.jsCode,
+            })
+        }else{
+            yield put({
+                type: actions.GET_CODE_ERROR,
+                errorMessage: errorMessage
+            })
+        }
+        
+    })
+}
 
 export function* addCode(){
     yield takeEvery("ADD_CODE_REQUEST",function*({payload}:any){
@@ -31,5 +67,5 @@ export function* addCode(){
 
 
 export default function* rootSaga(){
-    yield all([fork(addCode)]);
+    yield all([fork(addCode),fork(getCode)]);
 }
