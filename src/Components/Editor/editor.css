@@ -1,6 +1,6 @@
 .editor {
     width: 100%;
-    height: 100%;
+    height: 100vh;
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
@@ -15,13 +15,13 @@
     }
     
     .code-editor {
-      height: 100%;
+      height: 100vh;
       overflow: hidden;
       position: relative;
     }
   
     .half-height {
-      height: 100%;
+      height: 100vh;
     }
     
     .editor-header {
@@ -35,10 +35,12 @@
     }
     
     .react-codemirror2 {
-      max-height: 100%;
+      height: 100vh;
       overflow: auto;
     }
-    
+    .CodeMirror{
+        height: 100vh;
+    }
     .result {
       /* position: fixed; */
       /* top: 0; */
@@ -50,5 +52,5 @@
     
     .iframe {
       width: 100%;
-      height: 100%;
+      height: 100vh;
     }

@@ -1,21 +1,26 @@
 import React, { useState, useRef,useEffect} from 'react'
 
 export default function IFrameComponent (props:any){
-  console.log('props: ',props)
   const[iframeLoading,setiFrameLoading] = useState(false)
-  const[html,setHtml] = useState('')
+  const[html,setHtml] = useState(props?.html)
+  const[css, setCss] = useState(props?.css)
+  const[js,setJs] = useState(props?.js)
   const ifrm = useRef<HTMLIFrameElement>(null);
   const onLoadHandler = ()=>{
     setiFrameLoading(true);
     }
+
     useEffect(()=>{
         setHtml(props.html)
-        if(iframeLoading==true){
-            runCode()
-        }
+        setCss(props.css)
+        setJs(props.js)
         
     },[props])
-
+    useEffect(()=>{
+        if(iframeLoading===true){
+            runCode()
+        }
+    },[html,css,js])
     const runCode = () => {
         var document = ifrm?.current?.contentDocument
       const documentContents = `
@@ -26,12 +31,16 @@ export default function IFrameComponent (props:any){
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
           <meta http-equiv="X-UA-Compatible" content="ie=edge">
           <title>Document</title>
+          
           <style>
-            
+            ${css}
           </style>
         </head>
         <body>
           ${html}
+          <script>
+            ${js}
+          </script>
         </body>
         </html>
       `;
