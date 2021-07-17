@@ -18,7 +18,7 @@ Check out the editor [here](https://github.com/ngmars/React_code_editor/edit/mai
 
 
 ### Bonus
-- Feature to save your code, and generate a shareable link (such as https://editor.io/edit/<unique-id>) that should show the saved code when the link is visited. 
+- Feature to save your code, and generate a shareable link that should show the saved code when the link is visited. 
 - Pastebin Developer API to save code, generate a unique link, and then load it back at a later stage.
 - Deploy website on Github pages.
 - React application using Typescript.
