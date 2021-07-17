@@ -1,5 +1,5 @@
 ## DYTE PROBLEM STATEMENT - Frontend (React)
-
+You can try the editor [here](https://lool-6b320.web.app/)
 Check out the editor [here](https://github.com/ngmars/React_code_editor/edit/main/README.md).
 
 ## There are 3 sections:
@@ -15,6 +15,9 @@ Check out the editor [here](https://github.com/ngmars/React_code_editor/edit/mai
  - A “live view” section to show the rendered HTML website.
  - The “live view” section must display the rendered website that was created by the user. When a change is made to any of the index.html, index.css, or index.js files, the “live view” section should hot-reload, and display the new output.
 
+###The Share code setup
+To set up the share code, the CORSproxyworker.txt has to be copied and pasted in the cloudflare worker. The hosted link then must be put in src/config/workerUrl.ts file. 
+It must be set as the value for url.
 
 
 ### Bonus
