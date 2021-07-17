@@ -10,7 +10,7 @@ Check out the editor [here](https://github.com/ngmars/React_code_editor/edit/mai
 
 ### Code editor
 -  A “code editor” that supports syntax highlighting for HTML, CSS, and JS.
--  
+
 ### Live view section
  - A “live view” section to show the rendered HTML website.
  - The “live view” section must display the rendered website that was created by the user. When a change is made to any of the index.html, index.css, or index.js files, the “live view” section should hot-reload, and display the new output.
