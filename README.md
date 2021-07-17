@@ -1,37 +1,24 @@
-## Welcome to GitHub Pages
+## DYTE PROBLEM STATEMENT - Frontend (React)
 
-You can use the [editor on GitHub](https://github.com/ngmars/React_code_editor/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
+Check out the editor [here](https://github.com/ngmars/React_code_editor/edit/main/README.md).
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## There are 3 sections:
 
-### Markdown
+### File Explorer Pane
+ - Contains 3 files: index.html, index.css, index.js.
+ - Clicking on a file from the “file explorer” should display the corresponding content on the code editor for editing.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+### Code editor
+-  A “code editor” that supports syntax highlighting for HTML, CSS, and JS.
+-  
+### Live view section
+ - A “live view” section to show the rendered HTML website.
+ - The “live view” section must display the rendered website that was created by the user. When a change is made to any of the index.html, index.css, or index.js files, the “live view” section should hot-reload, and display the new output.
 
-```markdown
-Syntax highlighted code block
 
-# Header 1
-## Header 2
-### Header 3
 
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/ngmars/React_code_editor/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+### Bonus
+- Feature to save your code, and generate a shareable link (such as https://editor.io/edit/<unique-id>) that should show the saved code when the link is visited. 
+- Pastebin Developer API to save code, generate a unique link, and then load it back at a later stage.
+- Deploy website on Github pages.
+- React application using Typescript.
