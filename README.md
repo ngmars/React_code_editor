@@ -1,6 +1,5 @@
 ## DYTE PROBLEM STATEMENT - Frontend (React)
 You can try the editor [here](https://lool-6b320.web.app/)
-Check out the editor [here](https://github.com/ngmars/React_code_editor/edit/main/README.md).
 
 ## There are 3 sections:
 
