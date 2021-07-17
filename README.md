@@ -22,3 +22,5 @@ Check out the editor [here](https://github.com/ngmars/React_code_editor/edit/mai
 - Pastebin Developer API to save code, generate a unique link, and then load it back at a later stage.
 - Deploy website on Github pages.
 - React application using Typescript.
+
+![preview](https://github.com/ngmars/React_code_editor/blob/main/img1.jpeg?raw=true)
