@@ -27,4 +27,4 @@ It must be set as the value for url.
 - Deploy website on Github pages.
 - React application using Typescript.
 
-![preview](https://github.com/ngmars/React_code_editor/blob/main/img1.jpeg?raw=true)
+![preview](https://github.com/ngmars/React_code_editor/blob/main/WhatsApp%20Image%202021-07-17%20at%2021.56.29.jpeg?raw=true)
