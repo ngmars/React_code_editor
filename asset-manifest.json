@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/React_code_editor/static/css/main.0f45483d.chunk.css",
+    "main.js": "/React_code_editor/static/js/main.7ece0334.chunk.js",
+    "main.js.map": "/React_code_editor/static/js/main.7ece0334.chunk.js.map",
+    "runtime-main.js": "/React_code_editor/static/js/runtime-main.11d04821.js",
+    "runtime-main.js.map": "/React_code_editor/static/js/runtime-main.11d04821.js.map",
+    "static/css/2.1c247e31.chunk.css": "/React_code_editor/static/css/2.1c247e31.chunk.css",
+    "static/js/2.b3ae33b9.chunk.js": "/React_code_editor/static/js/2.b3ae33b9.chunk.js",
+    "static/js/2.b3ae33b9.chunk.js.map": "/React_code_editor/static/js/2.b3ae33b9.chunk.js.map",
+    "index.html": "/React_code_editor/index.html",
+    "static/css/2.1c247e31.chunk.css.map": "/React_code_editor/static/css/2.1c247e31.chunk.css.map",
+    "static/css/main.0f45483d.chunk.css.map": "/React_code_editor/static/css/main.0f45483d.chunk.css.map",
+    "static/js/2.b3ae33b9.chunk.js.LICENSE.txt": "/React_code_editor/static/js/2.b3ae33b9.chunk.js.LICENSE.txt",
+    "static/media/css3.c8c2aafe.svg": "/React_code_editor/static/media/css3.c8c2aafe.svg",
+    "static/media/html.767bf80c.svg": "/React_code_editor/static/media/html.767bf80c.svg",
+    "static/media/js.b8e36063.svg": "/React_code_editor/static/media/js.b8e36063.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.11d04821.js",
+    "static/css/2.1c247e31.chunk.css",
+    "static/js/2.b3ae33b9.chunk.js",
+    "static/css/main.0f45483d.chunk.css",
+    "static/js/main.7ece0334.chunk.js"
+  ]
+}
